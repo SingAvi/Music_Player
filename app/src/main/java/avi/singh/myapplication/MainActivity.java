@@ -1,8 +1,6 @@
 package avi.singh.myapplication;
 
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -17,9 +15,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.TextView;
-
 public class MainActivity extends AppCompatActivity {
+
+
+    private int[] imageResId = {
+            R.drawable.favourite
+          
+    };
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+
 
 
     }
@@ -110,26 +114,32 @@ public class MainActivity extends AppCompatActivity {
 
             if(getArguments().getInt(ARG_SECTION_NUMBER) ==1)
                 {
-                View rootView1 = inflater.inflate(R.layout.fragment_page_01,container,false);
+                View rootView1 = inflater.inflate(R.layout.tracks,container,false);
                 return rootView1;
                 }
 
             if(getArguments().getInt(ARG_SECTION_NUMBER) ==2)
             {
-                View rootView2 = inflater.inflate(R.layout.fragment_page_02,container,false);
+                View rootView2 = inflater.inflate(R.layout.playlists,container,false);
                 return rootView2;
             }
             if(getArguments().getInt(ARG_SECTION_NUMBER) ==3)
             {
-                View rootView3 = inflater.inflate(R.layout.fragment_page_03,container,false);
+                View rootView3 = inflater.inflate(R.layout.album,container,false);
+                return rootView3;
+            }
+
+            if(getArguments().getInt(ARG_SECTION_NUMBER) ==4)
+            {
+                View rootView3 = inflater.inflate(R.layout.device,container,false);
                 return rootView3;
             }
 
             else
                 {
-                View rootView = inflater.inflate(R.layout.fragment_page_01, container, false);
-              ;
-                return rootView;
+                View rootView4 = inflater.inflate(R.layout.favourite, container, false);
+
+                return rootView4;
                 }
         }
     }
@@ -161,18 +171,21 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "TRACKS";
                 case 1:
-                    return "SECTION 2";
+                    return "PLAYLISTS";
                 case 2:
-                    return "SECTION 3";
+                    return "ALBUM";
                 case 3:
-                    return "SECTION 1";
+                    return "DEVICE";
                 case 4:
-                    return "SECTION 1";
+                    return "FAVOURITE";
+
 
             }
             return null;
         }
+
+
     }
 }

@@ -13,12 +13,12 @@ import avi.singh.myapplication.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Page_02.OnFragmentInteractionListener} interface
+ * {@link Albums.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Page_02#newInstance} factory method to
+ * Use the {@link Albums#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Page_02 extends Fragment {
+public class Albums extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +30,7 @@ public class Page_02 extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Page_02() {
+    public Albums() {
         // Required empty public constructor
     }
 
@@ -40,11 +40,11 @@ public class Page_02 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Page_02.
+     * @return A new instance of fragment Page_03.
      */
     // TODO: Rename and change types and number of parameters
-    public static Page_02 newInstance(String param1, String param2) {
-        Page_02 fragment = new Page_02();
+    public static Albums newInstance(String param1, String param2) {
+        Albums fragment = new Albums();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,7 +65,7 @@ public class Page_02 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_page_02, container, false);
+        return inflater.inflate(R.layout.album, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

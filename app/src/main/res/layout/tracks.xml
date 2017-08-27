@@ -1,13 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="layout.Page_03">
-
-
-
-
+    android:id="@+id/Relative_1"
+    android:layout_height="match_parent"
+    tools:context="layout.Tracks">
 
 
 
@@ -21,7 +18,8 @@
 
         <include layout="@layout/music_bottom_function"/>
 
-   </android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>
+
+
 
 </RelativeLayout>
-
