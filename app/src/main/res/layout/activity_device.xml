@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context="avi.singh.myapplication.Device">
 
+
+
+<ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:id="@+id/device_read_storage">
+    </ListView>
+
 </android.support.constraint.ConstraintLayout>
