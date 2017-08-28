@@ -89,7 +89,11 @@ public class Main_Activity extends AppCompatActivity
 
         } else if (id == R.id.nav_device) {
 
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+
             startActivity(new Intent(Main_Activity.this,Device.class));
+            finish();
 
         } else if (id == R.id.nav_share) {
 
