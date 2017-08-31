@@ -4,14 +4,13 @@
     android:layout_height="match_parent">
 
 
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="20sp"
-        android:paddingBottom="5sp"
         android:elevation="5sp"
-        android:text="TextView" />
+        android:paddingBottom="5sp"
+        android:text="TextView"
+        android:textSize="20sp" />
 </LinearLayout>
