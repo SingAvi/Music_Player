@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,7 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.Window;
+import android.widget.Toast;
 
 public class Main_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -21,12 +23,17 @@ public class Main_Activity extends AppCompatActivity
 
 
 
+    float x1,y1;
+    float x2,y2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main_);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -113,5 +120,52 @@ public class Main_Activity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    public boolean onTouchEvent(MotionEvent touchevent)
+    {
+        switch (touchevent.getAction())
+        {
+// when user first touches the screen we get x and y coordinate
+            case MotionEvent.ACTION_DOWN:
+            {
+                x1 = touchevent.getX();
+                y1 = touchevent.getY();
+                break;
+            }
+            case MotionEvent.ACTION_UP:
+            {
+                x2 = touchevent.getX();
+                y2 = touchevent.getY();
+//if left to right sweep event on screen
+                if (x1 < x2)
+                {
+                    Toast.makeText(this, "Left to Right Swap Performed", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Main_Activity.this, Music_player.class));
+                }
+// if right to left sweep event on screen
+                if (x1 > x2)
+                {
+                    Toast.makeText(this, "Right to Left Swap Performed", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Main_Activity.this, Music_player.class));
+                }
+// if top to Down sweep event on screen
+                if (y1 < y2)
+                {Toast.makeText(this, "Top to Down Swap Performed", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Main_Activity.this, Music_player.class));
+//Toast.makeText(this, "top to down Swap Performed", Toast.LENGTH_LONG).show();
+                }
+//if Down to UP sweep event on screen
+                if (y1 > y2)
+                {
+                    Toast.makeText(this, "Down to Top Swap Performed", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Main_Activity.this, Music_player.class));
+// Toast.makeText(this, "Down to UP Swap Performed", Toast.LENGTH_LONG).show();
+                }
+                break;
+            }
+        }
+        return false;
     }
 }
