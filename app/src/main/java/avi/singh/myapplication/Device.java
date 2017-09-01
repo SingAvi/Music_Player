@@ -17,6 +17,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -26,6 +27,9 @@ import java.util.ArrayList;
 
 
 public class Device extends AppCompatActivity {
+
+    float x1,x2;
+    float y1,y2;
 
     private ArrayList<SongInfo> _songs = new ArrayList<SongInfo>();;
     RecyclerView recyclerView;
@@ -164,5 +168,34 @@ public class Device extends AppCompatActivity {
             songAdapter = new SongAdaptor(Device.this,_songs);
 
         }
+    }
+
+
+    public boolean onTouchEvent(MotionEvent touchevent)
+    {
+        switch (touchevent.getAction())
+        {
+// when user first touches the screen we get x and y coordinate
+            case MotionEvent.ACTION_DOWN:
+            {
+                x1 = touchevent.getX();
+                y1 = touchevent.getY();
+                break;
+            }
+            case MotionEvent.ACTION_UP:
+            {
+                x2 = touchevent.getX();
+                y2 = touchevent.getY();
+//if left to right sweep event on screen
+                if (y1 > y2)
+                {
+                    Toast.makeText(this, "Down to Top Swap Performed", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Device.this,Main_Activity.class));
+// Toast.makeText(this, "Down to UP Swap Performed", Toast.LENGTH_LONG).show();
+                }
+                break;
+            }
+        }
+        return false;
     }
 }
