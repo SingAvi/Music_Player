@@ -189,7 +189,7 @@ public class Device extends AppCompatActivity {
 //if left to right sweep event on screen
                 if (y1 > y2)
                 {
-                    Toast.makeText(this, "Down to Top Swap Performed", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Down to Top Swap Done", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(Device.this,Main_Activity.class));
 // Toast.makeText(this, "Down to UP Swap Performed", Toast.LENGTH_LONG).show();
                 }
