@@ -10,10 +10,6 @@
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Playlists" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="" />
 
         <item
             android:id="@+id/nav_device"
