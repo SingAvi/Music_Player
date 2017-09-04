@@ -32,7 +32,7 @@ public class m_player extends AppCompatActivity {
             {
                 x2 = touchevent.getX();
                 y2 = touchevent.getY();
-//if left to right sweep event on screen
+
                 if (y1 > y2)
                 {
                     Toast.makeText(this, "Down to Top Swap Performed", Toast.LENGTH_LONG).show();

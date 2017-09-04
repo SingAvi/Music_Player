@@ -43,7 +43,7 @@ public class SongAdaptor extends RecyclerView.Adapter<SongAdaptor.SongHolder> {
         final SongInfo s = _songs.get(i);
         songHolder.tvSongName.setText(_songs.get(i).getSongname());
         songHolder.tvSongArtist.setText(_songs.get(i).getArtistname());
-        songHolder.tvAlbum.setImageDrawable(Drawable.createFromPath(_songs.get(i).getAlbum()));
+
 
     }
 
@@ -61,7 +61,6 @@ public class SongAdaptor extends RecyclerView.Adapter<SongAdaptor.SongHolder> {
             super(itemView);
             tvSongName = (TextView) itemView.findViewById(R.id.tvSongName);
             tvSongArtist = (TextView) itemView.findViewById(R.id.tvArtistName);
-            tvAlbum = (ImageView) itemView.findViewById(R.id.album);
 
         }
     }

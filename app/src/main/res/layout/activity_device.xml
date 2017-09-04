@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardBackgroundColor="@android:color/white"
+    app:cardElevation="5dp"
     android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:paddingBottom="5dp"
             android:layout_gravity="center"
             android:orientation="vertical">
 
@@ -17,6 +18,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25sp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="20sp"
                     android:text="Shape of you" />
 
@@ -26,15 +28,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25sp"
                     android:text="Ed Sheeran"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="15sp" />
-
-                <ImageView
-                    android:id="@+id/album"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_music_note_black_24dp"
-                    />
-
 
         </LinearLayout>
 

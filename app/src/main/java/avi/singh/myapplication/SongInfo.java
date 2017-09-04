@@ -4,7 +4,6 @@ public class SongInfo {
     private String Songname;
     private String Artistname;
     private String SongUrl;
-    private String Album;
 
     public SongInfo() {
     }
@@ -13,7 +12,7 @@ public class SongInfo {
         Songname = songname;
         Artistname = artistname;
         SongUrl = songUrl;
-        Album = album;
+
     }
 
     public String getSongname() {
@@ -41,12 +40,4 @@ public class SongInfo {
     }
 
 
-    public String getAlbum() {
-        return Album;
-    }
-
-
-    public void setAlbum(String album) {
-         Album = album;
-    }
 }
