@@ -4,7 +4,7 @@
     tools:context="avi.singh.myapplication.MainActivity">
     <item
         android:id="@+id/you_tube"
-        android:icon="@drawable/ic_music_note_black_24dp"
+        android:icon="@drawable/ic_audiotrack_black_24dp"
         android:title="youTube"
         android:visible="true"
         app:showAsAction="always" />
