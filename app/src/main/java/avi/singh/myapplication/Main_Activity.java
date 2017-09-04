@@ -60,7 +60,7 @@ public class Main_Activity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -72,7 +72,10 @@ public class Main_Activity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.you_tube) {
+
+            startActivity(new Intent(Main_Activity.this,m_player.class));
+
             return true;
         }
 
@@ -90,6 +93,7 @@ public class Main_Activity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_device) {
+
 
             startActivity(new Intent(Main_Activity.this,Device.class));
 

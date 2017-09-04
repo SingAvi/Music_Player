@@ -8,14 +8,17 @@ import android.widget.Toast;
 
 public class m_player extends AppCompatActivity {
 
-    float x1,y1;
-    float x2,y2;
+    float x1,y1;   //  first touch.
+    float x2,y2;   //  second touch.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m_player);
+
     }
+
+
 
     public boolean onTouchEvent(MotionEvent touchevent)
     {
